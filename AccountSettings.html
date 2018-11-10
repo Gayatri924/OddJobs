@@ -3,24 +3,39 @@
 		<title>Account Settings</title>
 		<style>
 			body {
-				
+				background-color: #1DC9A1;
+				text-align: center;
+			}
+			
+			form{
+				border-radius: 25px;
+				background: #CCFFFF;
+				padding: 20px;
+				width: 500px;
+				height: 300px;
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				vertical-align: center;
+				font-weight: bold;
+				font-size: 30px;
+				text-align: center;
 			}
 		</style>
 	</head>
 	<body>
-		<h1 style="text-align: center">Your Account</h1>
-		<h2>Age</h2>
-		<form>
-			Name: <input type="text" name="name"><br>
-			Age: <input type="text" name="age"><br>
-			Grade: <input type="text" name="grade"><br>
-			Distance Range (miles): <input type="text" name="range"><br>
+		<h1>Your Account</h1>
+		<form id="info">
+			Name:      <input type="text" name="name"><br><br>
+			Age:       <input type="text" name="age"><br><br>
+			Grade:     <input type="text" name="grade"><br><br>
+			Distance Range (miles): <input type="text" name="range"><br><br>
 		</form>
-		<p>Are you looking for:</p>
-		<form>
+		<p id="form">Are you looking for:</p>
+		<form id="form">
 			<input type="radio" name = "value" value="Paid">Paid Position<br>
 			<input type="radio" name = "value" value="Free">Positions without pay<br>
-			<input type="radio" name = "value" value="Both">Both<br>
+			<input type="radio" name = "value" value="Both">Both<br><br>
 			<input type="submit" value="Save"><br>
 		</form>
 	</body>
