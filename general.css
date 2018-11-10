@@ -1,0 +1,11 @@
+html{
+  font-family: "Trebuchet MS";
+  font-size: 16px;
+  color: black;
+  background:
+}
+body{
+  position: absolute;
+  background-attachment: fixed;
+  background-image: image(bkgd.png);
+}
