@@ -1,8 +1,27 @@
 <html>
 	<head>
 		<title>Account Settings</title>
+		<style>
+			body {
+				
+			}
+		</style>
 	</head>
+	<body>
 		<h1 style="text-align: center">Your Account</h1>
-		<!--Need to add something about Age, Money/Free, Range-->
+		<h2>Age</h2>
+		<form>
+			Name: <input type="text" name="name"><br>
+			Age: <input type="text" name="age"><br>
+			Grade: <input type="text" name="grade"><br>
+			Distance Range (miles): <input type="text" name="range"><br>
+		</form>
+		<p>Are you looking for:</p>
+		<form>
+			<input type="radio" name = "value" value="Paid">Paid Position<br>
+			<input type="radio" name = "value" value="Free">Positions without pay<br>
+			<input type="radio" name = "value" value="Both">Both<br>
+			<input type="submit" value="Save"><br>
+		</form>
 	</body>
 </html>
