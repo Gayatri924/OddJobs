@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.views import generic
 from oddjobsapp.models import User, Post
-from socialapp.forms import SignUpForm
+from oddjobsapp.forms import SignUpForm
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 
