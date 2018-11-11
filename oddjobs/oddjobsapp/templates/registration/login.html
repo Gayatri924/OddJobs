@@ -2,25 +2,23 @@
 <head>
 <title>Odd Jobs - Log in</title>
 
-<link rel="stylesheet" href="oddjobs.oddjobs.css">
+<link rel="stylesheet" href="{% static "oddjobs.css" %}">
 
-<img id="logo" src="Logo.png">
+<img id="logo" src="{% static "Logo.png" %}">
 </head>
 
-<body>
+<body style="background-image: url({% static "Neighborhood-29.jpg" %})">
 
 
 <div class="loginbox">
 	<p>Login:</p>
 	{% block content %}
 	<form method="post" id="info">
-			<!--Username: <input id= "usernametext" type="text" name="username"><br><br>-->
-			<!--Password:  <input id = "passwordstext" type="text" name="password"><br><br>-->
 			<div id="uname">{% csrf_token %}</div>
 			<div id="pword">{{ form.as_p }}</div>
-			<button type="submit" name="login">Login</button><br>
+			<button id="loginbutton" type="submit" name="login">Login</button><br>
 	</form>
-	<a href="/signup">Sign Up</a>
+	<p class="signup">Don't have an account yet? <a href="/signup" class="signlink">Sign Up</a></p>
 	{% endblock %}
 </div>
 

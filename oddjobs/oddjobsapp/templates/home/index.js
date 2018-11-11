@@ -10,31 +10,31 @@ window.sendMessage = function(){
 */
 //private var key = '7a7vvthtmw7d';
 //var secret = 'dxm9bj3zdgvf84jq4m9h362svdmz8neqfryptc9jsfkhur5nz5tbvmhyt9arbrqd';
-import settings from .; 
+//import settings from "../../../oddjobs/settings.py";
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-window.sendMessage = function(){
-    console.log("Hello")
-}
-client = stream.connect('xkwvpuatj96g', 'cq47pqm65e5749avhzbmcbgdb3wz8czhaxazez7gdrg6cqwpywcdzyxvfh6rcrmh', 'us-east');
-=======
-var client = stream.connect(settings.STREAM_API_KEY, settings.STREAM_API_SECRET, 'us-east');
->>>>>>> 3b784628d52fe50f95f5d0c1922bb05bf9f221da
-=======
-var client = stream.connect(settings.STREAM_API_KEY, settings.STREAM_API_SECRET, 'us-east');
->>>>>>> 22406ae0565a5f112e805a0b8606c76ab4ea4fc7
+/*function loadFile(filePath) {
+  var result = null;
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.open("GET", filePath, false);
+  xmlhttp.send();
+  if (xmlhttp.status==200) {
+    result = xmlhttp.responseText;
+  }
+  return result;
+}*/
+/*var data = loadFile("secret.txt");//loadFile("oddjobs/oddjobsapp/templates/home/secret.txt");
+var arrdata = data.split(" ");*/
+var STREAM_API_KEY = "7a7vvthtmw7d";//arrdata[0];
+//var STREAM_API_SECRET = arrdata[1];
+
+
+var client = stream.connect(STREAM_API_KEY);//,STREAM_API_SECRET);//, 'us-east');
 // Instantiate a new client (client side)
-client = stream.connect(settings.STREAM_API_KEY, null, 'us-east');
+//client = stream.connect(STREAM_API_KEY, null, 'us-east');
 // Find your API keys here https://getstream.io/dashboard/
 
 var chris = client.feed('user', 'chris');
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 22406ae0565a5f112e805a0b8606c76ab4ea4fc7
 
 window.sendMessage = function(){
 // Add an Activity; message is a custom field - tip: you can add unlimited custom fields!
@@ -53,10 +53,6 @@ window.sendMessage = function(){
 }
 
 
-<<<<<<< HEAD
->>>>>>> 3b784628d52fe50f95f5d0c1922bb05bf9f221da
-=======
->>>>>>> 22406ae0565a5f112e805a0b8606c76ab4ea4fc7
 // Add an Activity; message is a custom field - tip: you can add unlimited custom fields!
 chris.addActivity({
   actor: 'chris',
@@ -70,14 +66,7 @@ chris.addActivity({
     // Handle or raise the Error.
   }
 );
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> 3b784628d52fe50f95f5d0c1922bb05bf9f221da
-=======
-
->>>>>>> 22406ae0565a5f112e805a0b8606c76ab4ea4fc7
 
 // Create a following relationship between Jack's "timeline" feed and Chris' "user" feed:
 var jack = client.feed('timeline', 'jack');

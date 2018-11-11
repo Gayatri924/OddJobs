@@ -26,4 +26,4 @@ class LoginForm(forms.Form):
 class PostForm(forms.Form):
     class Meta:
         model = Post
-        fields = ['created_at', 'topic', 'author', 'post_text']
+        fields = ['created_at', 'user', 'text']
