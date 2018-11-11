@@ -20,6 +20,7 @@ body {
 }
 
 div.loginbox{
+	text-color: #65470B;
 	text-align: center;
 	font-weight: bold;
 	font-size: 25px;
@@ -30,7 +31,7 @@ div.loginbox{
 	background-size: cover;
 	padding: 10px;
 	width: 50%;
-	height: 400px;
+	height: 350px;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -38,33 +39,48 @@ div.loginbox{
 
 #loginwords{
 	font-size: 30px;
-	font-family: "Times New Roman";
-	color: darkblue;
+	font-family: "Trebuchet MS";
+	color: #65470B;
 }
 
 
 #info{
-	font-family: "Times New Roman";
-	text-shadow:3px 5px 5px white;
+	font-family: "Trebuchet MS";
+	color: #65470B;
 }
 
 #usernametext{
-	box-shadow: 5px 5px 5px #000000;
 	padding: 10px 20px;
+	border-radius: 25px;
+	border: none;
 }
 
 #passwordstext{
-	box-shadow: 5px 5px 5px #000000;
 	padding: 10px 20px;
+	border-radius: 25px;
+	border: none;
 }
 
 #loginbutton{
+	font-family: "Trebuchet MS";
 	background-color: blue;
 	color: white;
 	padding: 5px 20px;
 	text-align: center;
 	font-size: 20px;
-	box-shadow: 5px 5px 5px #000000;
+	border: none;
+	border-radius: 25px;
+}
+
+p.signup{
+	font-family: "Trebuchet MS";
+	font-size: 20px;
+	color: #65470B;
+}
+
+span.signlink{
+	color: darkblue;
+	font-size: 20px;
 }
 
 </style>
@@ -82,7 +98,7 @@ div.loginbox{
 			Password:  <input id = "passwordstext" type="text" name="password" size= "35"><br><br>
 	</form>
 	<button id="loginbutton" type="button" name="login">Login</button>
-	<p id="signup">Sign Up</p>
+	<p class="signup">Don't have an account yet? <span class="signlink">Sign Up</span></p>
 </div>
 
 </body>
