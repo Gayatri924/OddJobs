@@ -4,9 +4,7 @@
 //var stream = require('getstream');
 // Instantiate a new client (server side)
 
-window.sendMessage = function(){
-    console.log("Hello")
-}
+
 client = stream.connect('xkwvpuatj96g', 'cq47pqm65e5749avhzbmcbgdb3wz8czhaxazez7gdrg6cqwpywcdzyxvfh6rcrmh', 'us-east');
 // Instantiate a new client (client side)
 client = stream.connect('xkwvpuatj96g', null, 'us-east');
@@ -14,6 +12,22 @@ client = stream.connect('xkwvpuatj96g', null, 'us-east');
 
 var chris = client.feed('user', 'chris');
 
+window.sendMessage = function(){
+// Add an Activity; message is a custom field - tip: you can add unlimited custom fields!
+    chris.addActivity({
+      actor: 'chris',
+      verb: 'add',
+      object: 'picture:10',
+      foreign_id: 'picture:10',
+      message: 'Beautiful bird!'
+    }).then(
+      null, // nothing further to do
+      function(err) {
+        // Handle or raise the Error.
+      }
+    );
+}
+/*
 // Add an Activity; message is a custom field - tip: you can add unlimited custom fields!
 chris.addActivity({
   actor: 'chris',
@@ -27,6 +41,7 @@ chris.addActivity({
     // Handle or raise the Error.
   }
 );
+*/
 
 // Create a following relationship between Jack's "timeline" feed and Chris' "user" feed:
 var jack = client.feed('timeline', 'jack');
