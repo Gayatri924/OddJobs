@@ -1,17 +1,20 @@
 import stream
-
 client = stream.connect('xkwvpuatj96g', 'cq47pqm65e5749avhzbmcbgdb3wz8czhaxazez7gdrg6cqwpywcdzyxvfh6rcrmh', location='us-east')
 
 chris = client.feed("user", "chris")
 
+
+def send_message():
+    chris.add_activity({
+        "actor": "chris",
+        "verb": "add",
+        "object": "picture:10",
+        "foreign_id": "picture:10",
+        "message": "Beautiful bird!"
+    })
+
 # Add an Activity; message is a custom field - tip: you can add unlimited custom fields!
-chris.add_activity({
-  "actor": "chris",
-  "verb": "add",
-  "object": "picture:10",
-  "foreign_id": "picture:10",
-  "message": "Beautiful bird!"
-})
+
 
 # Create a following relationship between Jack's "timeline" feed and Chris' "user" feed:
 jack = client.feed("timeline", "jack")
