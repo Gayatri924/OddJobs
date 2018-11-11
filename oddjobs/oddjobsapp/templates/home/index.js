@@ -3,14 +3,22 @@
 
 //var stream = require('getstream');
 // Instantiate a new client (server side)
+/*
+window.sendMessage = function(){
+  console.log("Helo")
+}
+*/
+//private var key = '7a7vvthtmw7d';
+//var secret = 'dxm9bj3zdgvf84jq4m9h362svdmz8neqfryptc9jsfkhur5nz5tbvmhyt9arbrqd';
+import settings from .; 
 
-
-client = stream.connect('xkwvpuatj96g', 'cq47pqm65e5749avhzbmcbgdb3wz8czhaxazez7gdrg6cqwpywcdzyxvfh6rcrmh', 'us-east');
+var client = stream.connect(settings.STREAM_API_KEY, settings.STREAM_API_SECRET, 'us-east');
 // Instantiate a new client (client side)
-client = stream.connect('xkwvpuatj96g', null, 'us-east');
+client = stream.connect(settings.STREAM_API_KEY, null, 'us-east');
 // Find your API keys here https://getstream.io/dashboard/
 
 var chris = client.feed('user', 'chris');
+
 
 window.sendMessage = function(){
 // Add an Activity; message is a custom field - tip: you can add unlimited custom fields!
@@ -27,7 +35,8 @@ window.sendMessage = function(){
       }
     );
 }
-/*
+
+
 // Add an Activity; message is a custom field - tip: you can add unlimited custom fields!
 chris.addActivity({
   actor: 'chris',
@@ -41,7 +50,7 @@ chris.addActivity({
     // Handle or raise the Error.
   }
 );
-*/
+
 
 // Create a following relationship between Jack's "timeline" feed and Chris' "user" feed:
 var jack = client.feed('timeline', 'jack');
