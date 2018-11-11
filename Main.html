@@ -1,4 +1,4 @@
-<html>
+﻿<html>
   <head>
     <title>Map</title>
     <meta name="viewport" content="initial-scale=1.0">
@@ -7,44 +7,56 @@
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
 		body{
-			text-align: center;			
+			text-align: center;
+			background-image: url("blueb.jpg");
+			background-repeat: repeat;
+			background-position: left top;
+			font-family: "Trebuchet MS";
 		}
 		
-		top{
+		#top{
+			color: white;
 			font-size: 35px;
 			height: 10%;
 		}
+
 		
-		side{
+		#side{
+			text-color: #C3FDFF;
 			float: left;
 			width: 100%;
-			padding: 20px;
-			height: 10%;
-			top: 20%;
-			text-size: 40px;			
+			font-size: 20px;			
+		}
+		
+		#click1{
+			color: #C3FDFF;
+		}
+
+		#click2{
+			color: #C3FDFF;
 		}
 	  
 		#map {
 			right: 0px;
 			left: 0px
 			float: right;
-			height: 80%;
+			height: 90%;
 			width: 100%;
 			display: block;
 			margin-left: auto;
-			margin-right: 0;    
+			margin-right: auto;    
 			position: relative;
-			top: 20%;
+			top: 10%;
 		  }	  
     </style>
   </head>
   <body>
 	<div id="top">
-	  <h2>Cities</h2>
+		<h2>Where You Are</h2>
 	</div>
 	<div id="side">
-		<a href="Add.html">Click <b>Here</b> to add an Opportunity</a><br>
-		<a href="AccountSettings.html">Click <b>Here</b> to change your account settings</a>
+		<a id="click1" href="Add.html">Click <b>Here</b> to add an Opportunity</a><br>
+		<a id="click2" href="AccountSettings.html">Click <b>Here</b> to change your account settings</a>
 	</div>  
 	<div id="map">
 		<script>
