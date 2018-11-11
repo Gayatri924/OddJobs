@@ -1,11 +1,27 @@
-<head><title> Log in </title></head>
 {% load static %}
+<head>
+<title>Odd Jobs - Log in</title>
 
-{% block content %}
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-  </form>
-<a href="/signup">Sign up</a>
-{% endblock %}
+<link rel="stylesheet" href="oddjobs.oddjobs.css">
+
+<img id="logo" src="Logo.png">
+</head>
+
+<body>
+
+
+<div class="loginbox">
+	<p>Login:</p>
+	{% block content %}
+	<form method="post" id="info">
+			<!--Username: <input id= "usernametext" type="text" name="username"><br><br>-->
+			<!--Password:  <input id = "passwordstext" type="text" name="password"><br><br>-->
+			<div id="uname">{% csrf_token %}</div>
+			<div id="pword">{{ form.as_p }}</div>
+			<button type="submit" name="login">Login</button><br>
+	</form>
+	<a href="/signup">Sign Up</a>
+	{% endblock %}
+</div>
+
+</body>

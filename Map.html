@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+		right: 0px;
+        float: right;
+		height: 100%;
+		width: 100%;
+		display: block;
+		margin-left: auto;
+		margin-right: 0;
+		vertical-align: top;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+	  
+	  
+    </style>
+  </head>
+  <body>	
+	<div id="map">
+		<script>
+			function initMap() {
+			myCoor = {lat: 38.9784587, lng: -76.9282678}
+			var map = new google.maps.Map(document.getElementById('map'), {
+				center: myCoor,
+				zoom: 15
+			});
+			var marker = new google.maps.Marker({
+				position: myCoor,
+				map: map,
+				title: 'Volunteer at Technica'
+			});
+			var infowindow = new google.maps.InfoWindow({
+				content: '<p>John Doe <br> College Park-U of MD Metro Station <br>' + 
+				'I am looking for someone to help with rerouting traffic during renovation. Contact me if you are interested. <br>' +
+				'Salary: $8 an hour<br> Email: johnDoe@gmail.com'
+			});
+			marker.addListener('click', function() {
+				infowindow.open(map, marker);
+			});
+		}
+		</script>
+	</div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsrtkg4yxBf5fkTMPYmfl568e363Dk4Ow&callback=initMap"
+    async defer></script>
+  </body>
+</html>

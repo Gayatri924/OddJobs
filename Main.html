@@ -1,0 +1,88 @@
+﻿<html>
+  <head>
+    <title>Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+		body{
+			text-align: center;
+			background-image: url("blueb.jpg");
+			background-repeat: repeat;
+			background-position: left top;
+			font-family: "Trebuchet MS";
+		}
+		
+		#top{
+			color: white;
+			font-size: 35px;
+			height: 10%;
+		}
+
+		
+		#side{
+			text-color: #C3FDFF;
+			float: left;
+			width: 100%;
+			font-size: 20px;			
+		}
+		
+		#click1{
+			color: #C3FDFF;
+		}
+
+		#click2{
+			color: #C3FDFF;
+		}
+	  
+		#map {
+			right: 0px;
+			left: 0px
+			float: right;
+			height: 90%;
+			width: 100%;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;    
+			position: relative;
+			top: 10%;
+		  }	  
+    </style>
+  </head>
+  <body>
+	<div id="top">
+		<h2>Where You Are</h2>
+	</div>
+	<div id="side">
+		<a id="click1" href="Add.html">Click <b>Here</b> to add an Opportunity</a><br>
+		<a id="click2" href="AccountSettings.html">Click <b>Here</b> to change your account settings</a>
+	</div>  
+	<div id="map">
+		<script>
+			function initMap() {
+			myCoor = {lat: 38.9784587, lng: -76.9282678}
+			var map = new google.maps.Map(document.getElementById('map'), {
+				center: myCoor,
+				zoom: 15
+			});
+			var marker = new google.maps.Marker({
+				position: myCoor,
+				map: map,
+				title: 'Volunteer at Technica'
+			});
+			var infowindow = new google.maps.InfoWindow({
+				content: '<p>John Doe <br> College Park-U of MD Metro Station <br>' + 
+				'I am looking for someone to help with rerouting traffic during renovation. Contact me if you are interested. <br>' +
+				'Salary: $8 an hour<br> Email: johnDoe@gmail.com'
+			});
+			marker.addListener('click', function() {
+				infowindow.open(map, marker);
+			});
+		}
+		</script>
+	</div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsrtkg4yxBf5fkTMPYmfl568e363Dk4Ow&callback=initMap"
+    async defer></script>
+  </body>
+</html>

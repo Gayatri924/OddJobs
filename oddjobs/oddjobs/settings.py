@@ -42,7 +42,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'oddjobsapp.apps.OddjobsappConfig',
+    'stream_django',
 ]
+
+STREAM_API_KEY = '7a7vvthtmw7d'
+STREAM_API_SECRET = 'dxm9bj3zdgvf84jq4m9h362svdmz8neqfryptc9jsfkhur5nz5tbvmhyt9arbrqd'
+STREAM_LOCATION='us-east'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
