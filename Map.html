@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Simple Map</title>
+    <title>Map</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <style>
@@ -32,9 +32,17 @@
           zoom: 15
         });
 		var marker = new google.maps.Marker({
-			position: myLatLng,
+			position: myCoor,
 			map: map,
 			title: 'Volunteer at Technica'
+		});
+		var infowindow = new google.maps.InfoWindow({
+			content: '<p>John Doe <br> College Park-U of MD Metro Station <br>' + 
+			'I am looking for someone to help with rerouting traffic during renovation. Contact me if you are interested. <br>' +
+			'Salary: $8 an hour<br> Email: johnDoe@gmail.com'
+		});
+		marker.addListener('click', function() {
+			infowindow.open(map, marker);
 		});
       }
     </script>
