@@ -1,13 +1,7 @@
-// install via npm
-npm install getstream --save
-
-// install using bower
-bower install getstream
-
 // latest build is available at this link as well
-https://raw.githubusercontent.com/GetStream/stream-js/master/dist/js/getstream.js
+//https://raw.githubusercontent.com/GetStream/stream-js/master/dist/js/getstream.js
 
-var stream = require('getstream');
+//var stream = require('getstream');
 // Instantiate a new client (server side)
 client = stream.connect('xkwvpuatj96g', 'cq47pqm65e5749avhzbmcbgdb3wz8czhaxazez7gdrg6cqwpywcdzyxvfh6rcrmh', 'us-east');
 // Instantiate a new client (client side)
