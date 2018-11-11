@@ -2,13 +2,15 @@
 	<head>
 		<title>MainPage</title>		
 	</head>	
-	<frameset cols = "20%,80%">
-      <frame name = "sideBar" src = "SideBar.html" />
-      <frame name = "map" src = "Map.html" />
-   
-      <noframes>
-         <body>Your browser does not support frames.</body>
-      </noframes>
-      
+	<frameset rows= "20%, 80%">
+		<frame name= "top" src = "Top.html"/>
+		<frameset cols = "20%,80%">
+		  <frame name = "sideBar" src = "SideBar.html" />
+		  <frame name = "map" src = "Map.html" />
+	   
+			<noframes>
+				<body>Your browser does not support frames.</body>
+			</noframes>
+		</frameset>
    </frameset>
 </html>	
