@@ -3,6 +3,10 @@
 
 //var stream = require('getstream');
 // Instantiate a new client (server side)
+
+window.sendMessage = function(){
+    console.log("Hello")
+}
 client = stream.connect('xkwvpuatj96g', 'cq47pqm65e5749avhzbmcbgdb3wz8czhaxazez7gdrg6cqwpywcdzyxvfh6rcrmh', 'us-east');
 // Instantiate a new client (client side)
 client = stream.connect('xkwvpuatj96g', null, 'us-east');
@@ -33,9 +37,6 @@ jack.follow('user', 'chris').then(
   }
 );
 
-var sendMessage = function(){
-    console.log("Hello")
-}
 // Read Jack's timeline and Chris' post appears in the feed:
 jack.get({ limit: 10 }).then(function(results) {
   var activityData = results; // work with the feed activities
