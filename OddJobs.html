@@ -78,7 +78,7 @@ p.signup{
 	color: #65470B;
 }
 
-span.signlink{
+signlink{
 	color: darkblue;
 	font-size: 20px;
 }
@@ -95,10 +95,12 @@ span.signlink{
 	<p id="loginwords">Please input your username and password:</p>
 	<form id="info">
 			Username: <input id= "usernametext" type="text" name="username" size = "35"><br><br>
-			Password:  <input id = "passwordstext" type="text" name="password" size= "35"><br><br>
+			Password:  <input id = "passwordstext" type="password" name="password" size= "35"><br><br>
 	</form>
-	<button id="loginbutton" type="button" name="login">Login</button>
-	<p class="signup">Don't have an account yet? <span class="signlink">Sign Up</span></p>
+	<form action="Main.html">
+		<input type="submit" id="loginbutton" value="Login">
+	</form>	
+	<p class="signup">Don't have an account yet? <a class="signlink" href = "SignUp.html">Sign Up</a></p>
 </div>
 
 </body>
