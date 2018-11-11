@@ -47,6 +47,11 @@ class PostView(CreateView):
 class Index(LoginRequiredMixin, generic.ListView):
   login_url = '/login'
   redirect_field_name = ''
+  template_name = 'home/index.html'
+  context_object_name = 'posts_list'
+
+  def get_queryset(user_id):
+      return feed_manager.get_user_feed(user_id)
 
 def signup(request):
     if request.user.is_authenticated:
@@ -63,14 +68,6 @@ def signup(request):
     else:
         form = SignUpForm()
     return render(request, 'registration/signup.html', {'form': form})
-
-class Index(generic.ListView):
-
-    template_name = 'home/index.html'
-    context_object_name = 'posts_list'
-
-    def get_queryset(user_id):
-        return feed_manager.get_user_feed(user_id)
 
 def post(request):
     return HttpResponse("This is a dummy view")

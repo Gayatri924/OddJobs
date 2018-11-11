@@ -11,6 +11,7 @@ urlpatterns = [
     path('post/', views.post, name='post'),
     #path('login/', views. , name='login'),
     path('general.css', TemplateView.as_view(template_name="home/general.css"), name = "general"),
+    path('oddjobs.css', TemplateView.as_view(template_name="templates/registration/oddjobs.css"), name = "oddjobs"),
     #path('bkgd.png', TemplateView.as_view(template_name="home/bkgd.png"), name = "background"),
     path('index.js', TemplateView.as_view(template_name="home/index.js"), name = "index_js"),
     path('signup/', views.signup, name='signup'),
