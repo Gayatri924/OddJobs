@@ -1,5 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from oddjobsapp.models import Post
 from django import forms
 
 class SignUpForm(UserCreationForm):
@@ -21,3 +22,8 @@ class SignUpForm(UserCreationForm):
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=30)
     password = forms.CharField()
+
+class PostForm(forms.Form):
+    class Meta:
+        model = Post
+        fields = ['created_at', 'topic', 'author', 'post_text']

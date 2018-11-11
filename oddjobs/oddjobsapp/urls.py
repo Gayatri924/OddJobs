@@ -2,6 +2,9 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 from . import views
 from django.contrib.auth import views as auth_views
+from django.contrib import admin
+from django.contrib.auth.decorators import login_required
+from oddjobsapp import views
 
 urlpatterns = [
     path('', views.Index.as_view(), name='index'),
@@ -13,4 +16,6 @@ urlpatterns = [
     path('signup/', views.signup, name='signup'),
     path('login/', auth_views.LoginView.as_view(redirect_authenticated_user=True), name='login'),
     path('logout/', auth_views.logout, name='logout'),
+    path('admin/', admin.site.urls),
+    path('timeline/', login_required(views.PostView.as_view()), name='timeline'),
 ]

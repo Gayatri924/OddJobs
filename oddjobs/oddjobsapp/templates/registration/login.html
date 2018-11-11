@@ -6,7 +6,7 @@
 <style>
 
 body {
-	background-image: url("Neighborhood-29.jpg");
+	background-image: Neighborhood-29.jpg;
 	background-repeat: no-repeat;
 	background-position: left top;
 	background-size: cover;
@@ -36,34 +36,26 @@ div.loginbox{
 	margin-right: auto;
 }
 
-
-
 </style>
 
 <img id="logo" src="Logo.png")
 </head>
 
-{% load static %}
-
-{% block content %}
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-  </form>
-<a href="/signup">Sign up</a>
-{% endblock %}
 <body>
 
 
 <div class="loginbox">
 	<p>Login:</p>
-	<form id="info">
-			Username: <input id= "usernametext" type="text" name="username"><br><br>
-			Password:  <input id = "passwordstext" type="text" name="password"><br><br>
+	{% block content %}
+	<form method="post" id="info">
+			<!--Username: <input id= "usernametext" type="text" name="username"><br><br>-->
+			<!--Password:  <input id = "passwordstext" type="text" name="password"><br><br>-->
+			<div id="uname">{% csrf_token %}</div>
+			<div id="pword">{{ form.as_p }}</div>
+			<button type="submit" name="login">Login</button><br>
 	</form>
-	<button type="button" name="login">Login</button>
-	<p font-size: 10px; font-color: blue;>Sign Up</p>
+	<a href="/signup">Sign Up</a>
+	{% endblock %}
 </div>
 
 </body>
