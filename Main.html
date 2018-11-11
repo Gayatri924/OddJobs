@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <title>Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+		body{
+			text-align: center;			
+		}
+		
+		top{
+			font-size: 35px;
+			height: 10%;
+		}
+		
+		side{
+			float: left;
+			width: 100%;
+			padding: 20px;
+			height: 10%;
+			top: 20%;
+			text-size: 40px;			
+		}
+	  
+		#map {
+			right: 0px;
+			left: 0px
+			float: right;
+			height: 80%;
+			width: 100%;
+			display: block;
+			margin-left: auto;
+			margin-right: 0;    
+			position: relative;
+			top: 20%;
+		  }	  
+    </style>
+  </head>
+  <body>
+	<div id="top">
+	  <h2>Cities</h2>
+	</div>
+	<div id="side">
+		<a href="Add.html">Click <b>Here</b> to add an Opportunity</a><br>
+		<a href="AccountSettings.html">Click <b>Here</b> to change your account settings</a>
+	</div>  
+	<div id="map">
+		<script>
+			function initMap() {
+			myCoor = {lat: 38.9784587, lng: -76.9282678}
+			var map = new google.maps.Map(document.getElementById('map'), {
+				center: myCoor,
+				zoom: 15
+			});
+			var marker = new google.maps.Marker({
+				position: myCoor,
+				map: map,
+				title: 'Volunteer at Technica'
+			});
+			var infowindow = new google.maps.InfoWindow({
+				content: '<p>John Doe <br> College Park-U of MD Metro Station <br>' + 
+				'I am looking for someone to help with rerouting traffic during renovation. Contact me if you are interested. <br>' +
+				'Salary: $8 an hour<br> Email: johnDoe@gmail.com'
+			});
+			marker.addListener('click', function() {
+				infowindow.open(map, marker);
+			});
+		}
+		</script>
+	</div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsrtkg4yxBf5fkTMPYmfl568e363Dk4Ow&callback=initMap"
+    async defer></script>
+  </body>
+</html>
