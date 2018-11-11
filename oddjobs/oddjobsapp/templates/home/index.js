@@ -9,9 +9,9 @@ https://raw.githubusercontent.com/GetStream/stream-js/master/dist/js/getstream.j
 
 var stream = require('getstream');
 // Instantiate a new client (server side)
-client = stream.connect('7a7vvthtmw7d', 'dxm9bj3zdgvf84jq4m9h362svdmz8neqfryptc9jsfkhur5nz5tbvmhyt9arbrqd', 'us-east');
+client = stream.connect('xkwvpuatj96g', 'cq47pqm65e5749avhzbmcbgdb3wz8czhaxazez7gdrg6cqwpywcdzyxvfh6rcrmh', 'us-east');
 // Instantiate a new client (client side)
-client = stream.connect('7a7vvthtmw7d', null, 'us-east');
+client = stream.connect('xkwvpuatj96g', null, 'us-east');
 // Find your API keys here https://getstream.io/dashboard/
 
 var chris = client.feed('user', 'chris');
@@ -54,3 +54,16 @@ chris.removeActivity({ foreignId: 'picture:10' }).then(
     // Handle or raise the Error.
   }
 );
+
+var user1 = client.feed('user', '1');
+
+// Client-side: Instantiate a feed for feed group 'user', user id '1' and a security token generated server side
+var user1 = client.feed('user', '1', $token);
+
+// Add an activity to the feed
+var activity = {actor: 'User:1', verb: 'pin', object: 'Place:42', target: 'Board:1'};
+
+// Asynchronous methods return Promise since v3.0.0
+user1.addActivity(activity)
+    .then(function(data) { /* on success */ })
+    .catch(function(reason) { /* on failure, reason.error contains an explanation */ });
