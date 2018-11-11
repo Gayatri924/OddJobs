@@ -39,7 +39,9 @@ jack.follow('user', 'chris').then(
   }
 );
 
-
+document.getElementById("Send_Message").onClick(function(){
+    console.log("Hello")
+})
 // Read Jack's timeline and Chris' post appears in the feed:
 jack.get({ limit: 10 }).then(function(results) {
   var activityData = results; // work with the feed activities
