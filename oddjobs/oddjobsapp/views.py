@@ -4,6 +4,11 @@ from oddjobsapp.models import User, Post
 from oddjobsapp.forms import SignUpForm
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+class Index(LoginRequiredMixin, generic.ListView):
+  login_url = '/login'
+  redirect_field_name = ''
 
 def signup(request):
     if request.user.is_authenticated:
