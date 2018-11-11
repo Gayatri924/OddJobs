@@ -41,45 +41,21 @@
 			}
 
 			#nametext{
-				padding: 10px 40px;
+				padding: 10px;
+				height: 40px;
+				width: 250px;
 				border-radius: 25px;
 				border: none;
+				font-size: 25px;
 			}
 
-			#agetext{
-				padding: 10px 40px;
+			#descriptext{
+				padding: 30px;
+				height: 500px;
+				width: 500px;
 				border-radius: 25px;
 				border: none;
-			}
-
-			#age2text{
-				padding: 10px 40px;
-				border-radius: 25px;
-				border: none;
-			}
-
-			#gradetext{
-				padding: 10px 40px;
-				border-radius: 25px;
-				border: none;
-			}
-
-			#grade2text{
-				padding: 10px 40px;
-				border-radius: 25px;
-				border: none;
-			}
-
-			#adresstext{
-				padding: 10px 40px;
-				border-radius: 25px;
-				border: none;
-			}
-
-			#salarytext{
-				padding: 10px 40px;
-				border-radius: 25px;
-				border: none;
+				font-size: 25px;
 			}
 
 		</style>
@@ -88,10 +64,7 @@
 		<h1>Add an Opportunity</h1>
 		<form id="info">
 			Your Name:      <input id="nametext" type="text" name="name"><br><br>
-			Ages Allowed:       <input id="agetext" type="text" name="age1"> to: <input id="age2text" type="text" name="age2"><br><br>
-			Grades Allowed:     <input id="gradetext" type="text" name="grade1"> to: <input id="grade2text" type="text" name="grade2"><br><br>
-			Address: 	<input id="adresstext" type="text" name="address"><br><br>
-			Salary		<input id="salarytext" type="text" name="money"><br><br>	
+			Brief Description of Job:  <br><textarea id="descriptext" name="description"></textarea><br><br>
 			<button id="button" type="submit">Submit</button>		
 		</form>
 	</body>
