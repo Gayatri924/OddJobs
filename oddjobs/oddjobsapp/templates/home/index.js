@@ -13,6 +13,7 @@ window.sendMessage = function(){
 import settings from .; 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 window.sendMessage = function(){
     console.log("Hello")
 }
@@ -20,6 +21,9 @@ client = stream.connect('xkwvpuatj96g', 'cq47pqm65e5749avhzbmcbgdb3wz8czhaxazez7
 =======
 var client = stream.connect(settings.STREAM_API_KEY, settings.STREAM_API_SECRET, 'us-east');
 >>>>>>> 3b784628d52fe50f95f5d0c1922bb05bf9f221da
+=======
+var client = stream.connect(settings.STREAM_API_KEY, settings.STREAM_API_SECRET, 'us-east');
+>>>>>>> 22406ae0565a5f112e805a0b8606c76ab4ea4fc7
 // Instantiate a new client (client side)
 client = stream.connect(settings.STREAM_API_KEY, null, 'us-east');
 // Find your API keys here https://getstream.io/dashboard/
@@ -27,7 +31,10 @@ client = stream.connect(settings.STREAM_API_KEY, null, 'us-east');
 var chris = client.feed('user', 'chris');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 22406ae0565a5f112e805a0b8606c76ab4ea4fc7
 
 window.sendMessage = function(){
 // Add an Activity; message is a custom field - tip: you can add unlimited custom fields!
@@ -46,7 +53,10 @@ window.sendMessage = function(){
 }
 
 
+<<<<<<< HEAD
 >>>>>>> 3b784628d52fe50f95f5d0c1922bb05bf9f221da
+=======
+>>>>>>> 22406ae0565a5f112e805a0b8606c76ab4ea4fc7
 // Add an Activity; message is a custom field - tip: you can add unlimited custom fields!
 chris.addActivity({
   actor: 'chris',
@@ -61,9 +71,13 @@ chris.addActivity({
   }
 );
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 3b784628d52fe50f95f5d0c1922bb05bf9f221da
+=======
+
+>>>>>>> 22406ae0565a5f112e805a0b8606c76ab4ea4fc7
 
 // Create a following relationship between Jack's "timeline" feed and Chris' "user" feed:
 var jack = client.feed('timeline', 'jack');
